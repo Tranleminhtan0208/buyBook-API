@@ -4,10 +4,12 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.BUYBOOK.users.users;
+import com.example.BUYBOOK.Entity.Users;
 
 @Service
 public interface usersSevices {
-	public List<users> getAllUser();
-	public users getUserIdById (int Id);
+	public List<Users> getUsers();
+//	public Users getUserIdById (int Id);
+	public List<Users> findAll();
+
 }
