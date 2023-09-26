@@ -9,6 +9,9 @@ import java.util.List;
 public interface UserRepositories extends JpaRepository<Users, Long> {
     @Override
     List<Users> findAll();
+    Users findUsersByUserName(String userName);
 
+    @Override
+    <S extends Users> S save(S entity);
 
 }
