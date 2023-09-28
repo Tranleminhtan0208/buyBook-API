@@ -6,10 +6,8 @@ import com.example.BUYBOOK.services.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
 @RestController
 public class IndexRestController {
     @Autowired
@@ -17,14 +15,14 @@ public class IndexRestController {
 
     @PostMapping("/loginEncode")
     @ResponseBody
-    public String LoginEncode(@ModelAttribute("loginInfo") LoginInfo loginInfo) {
-        String hoang = ls.LoginEncode(loginInfo);
+    public String LoginEncode(@RequestBody LoginInfo loginInf) {
+        String hoang = ls.LoginEncode(loginInf);
         return hoang;
     }
 
     @PostMapping("/Signup")
     @ResponseBody
-    public ResponseEntity<Object> Signup(@ModelAttribute("signUpDTO") SignUpDTO signupDTO) {
+    public ResponseEntity<Object> Signup(@RequestBody SignUpDTO signupDTO) {
         String rs = ls.Signup(signupDTO);
         if (rs.contains("Error")){
             return new ResponseEntity<>("Sign up fail", HttpStatus.EXPECTATION_FAILED);
