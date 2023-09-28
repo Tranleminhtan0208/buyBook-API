@@ -19,19 +19,43 @@
   
     /*==================================================================
     [ Validate ]*/
-    var input = $('.validate-input .input100');
-
-    $('.validate-form').on('submit',function(){
-        var check = true;
-
-        for(var i=0; i<input.length; i++) {
-            if(validate(input[i]) == false){
-                showValidate(input[i]);
-                check=false;
+    $('.validate-form').on('submit',function(event){
+        // event.preventDefault();
+        let path = window.location.pathname;
+        let username = $('#userName').val();
+        let password = $('#passWord').val();
+        let rePassword = $('.validate-input .input100[name="re-password"]').val();
+        console.log({
+            username: username,
+            password: password
+        });
+        if(path === '/'){
+            if(!username || !password ){
+                event.preventDefault();
+                alert("username or password is empty");
             }
         }
+        else if(path ==='/signup'){
+            console.log("ok")
+            if(!username || !password || !rePassword){
+                event.preventDefault();
+                alert("username or password is empty");
+            }
+            else if(password !== rePassword){
+                event.preventDefault();
+                alert("confirm password don't match")
+            }
+        }
+        // var check = true;
 
-        return check;
+        // for(var i=0; i<input.length; i++) {
+        //     if(validate(input[i]) == false){
+        //         showValidate(input[i]);
+        //         check=false;
+        //     }
+        // }
+
+        // return check;
     });
 
 

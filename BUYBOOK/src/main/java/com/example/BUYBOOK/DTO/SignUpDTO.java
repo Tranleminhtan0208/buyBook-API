@@ -1,4 +1,5 @@
 package com.example.BUYBOOK.DTO;
+import java.util.Objects;
 
 public class SignUpDTO {
     private String userName;
@@ -45,4 +46,68 @@ public class SignUpDTO {
     public void setRole(String role) {
         this.role = role;
     }
+
+    public SignUpDTO() {
+    }
+
+    public SignUpDTO(String userName, String passWord, String email, String role, String fullName) {
+        this.userName = userName;
+        this.passWord = passWord;
+        this.email = email;
+        this.role = role;
+        this.fullName = fullName;
+    }
+
+    public SignUpDTO userName(String userName) {
+        setUserName(userName);
+        return this;
+    }
+
+    public SignUpDTO passWord(String passWord) {
+        setPassWord(passWord);
+        return this;
+    }
+
+    public SignUpDTO email(String email) {
+        setEmail(email);
+        return this;
+    }
+
+    public SignUpDTO role(String role) {
+        setRole(role);
+        return this;
+    }
+
+    public SignUpDTO fullName(String fullName) {
+        setFullName(fullName);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (!(o instanceof SignUpDTO)) {
+            return false;
+        }
+        SignUpDTO signUpDTO = (SignUpDTO) o;
+        return Objects.equals(userName, signUpDTO.userName) && Objects.equals(passWord, signUpDTO.passWord) && Objects.equals(email, signUpDTO.email) && Objects.equals(role, signUpDTO.role) && Objects.equals(fullName, signUpDTO.fullName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userName, passWord, email, role, fullName);
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+            " userName='" + getUserName() + "'" +
+            ", passWord='" + getPassWord() + "'" +
+            ", email='" + getEmail() + "'" +
+            ", role='" + getRole() + "'" +
+            ", fullName='" + getFullName() + "'" +
+            "}";
+    }
+    
 }

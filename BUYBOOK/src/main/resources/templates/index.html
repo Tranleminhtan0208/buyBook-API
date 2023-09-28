@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Login V2</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" method="post" th:action="@{/loginEnconde}" th:object="${loginInfo}">
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -40,16 +40,16 @@
 						<i class="zmdi zmdi-font"></i>
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
+					<div class="wrap-input100 validate-input">
+						<input class="input100" type="text" name="username" th:field="*{userName}" required>
+						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="password" th:field="*{passWord}" required>
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
@@ -67,7 +67,7 @@
 							Don’t have an account?
 						</span>
 
-						<a class="txt2" href="#">
+						<a class="txt2" href="/signup">
 							Sign Up
 						</a>
 					</div>
@@ -75,10 +75,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
 <!--===============================================================================================-->
 	<script th:src="@{vendor/jquery/jquery-3.2.1.min.js}"></script>
 <!--===============================================================================================-->
