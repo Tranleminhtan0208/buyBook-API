@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add product</title>
+</head>
+<body>
+    <form th:method="post" th:object="${productInput}" th:action="@{/addProduct}">
+        <input placeholder="ten product" th:field="*{productName}"></input>
+        <input placeholder="url img path" th:field="*{imagePath}"></input>
+        <input placeholder="so luong" th:field="*{quantity}"></input>
+        <input placeholder="sale" th:field="*{sale}"></input>
+        <input placeholder="sold" th:field="*{sold}"></input>
+        <input placeholder="price" th:field="*{price}"></input>
+        <input placeholder="the loai" th:field="*{bookType}"></input>
+        <input placeholder="nam phat hanh" th:field="*{bookType}"></input>
+        <input placeholder="Tac gia" th:field="*{author}"></input>
+        <button>submit</button>
+    </form>
+        <label th:text="${ketqua}"></label>
+
+
+</body>
+</html>
