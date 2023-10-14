@@ -9,7 +9,7 @@ import java.util.List;
 public interface BookRepositories extends JpaRepository<bookEntity, Long> {
     @Override
     List<bookEntity> findAll();
-    List<bookEntity> findproductName(String productName);
+    List<bookEntity> findByProductName(String productName);
 
     @Override
     <S extends bookEntity> S save(S entity);

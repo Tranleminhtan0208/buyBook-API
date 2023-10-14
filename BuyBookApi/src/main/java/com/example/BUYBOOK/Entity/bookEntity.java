@@ -11,7 +11,7 @@ import java.sql.Date;
 @Table(name="product")
 public class bookEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PRODUCT_ID")
     private Long productId;
     @Column(name = "PRODUCT_NAME")
