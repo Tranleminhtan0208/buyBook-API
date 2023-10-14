@@ -16,7 +16,7 @@ public class BookDetailService {
     BookRepositories bookRepositories;
     public List<bookEntity> loadBookDetail(){
         List<bookEntity> listPro = new ArrayList<>();
-        listPro = bookRepositories.findproductName("Ngay xua");
+        listPro = bookRepositories.findByProductName("Ngay xua");
         return listPro;
     }
 }

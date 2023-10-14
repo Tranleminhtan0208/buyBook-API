@@ -1,4 +1,4 @@
-package com.example.BUYBOOK.RestController;
+package com.example.BUYBOOK.controller;
 import com.example.BUYBOOK.DTO.Book;
 import com.example.BUYBOOK.DTO.LoginInfo;
 import com.example.BUYBOOK.Entity.bookEntity;
@@ -24,7 +24,7 @@ import java.util.List;
             List<bookEntity> list = new ArrayList<>();
             list = BS.loadBookDetail();
 
-            model.addAttribute("list", book);
+            model.addAttribute("list", list);
             return "book-detail";
         }
 }
