@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết sách</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{css/style.css}">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <a href="/">Trang chủ</a>
+        <a href="/cart">Giỏ hàng</a>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="product">
+            <div class="product-image">
+                <img src="https://bizweb.dktcdn.net/100/438/408/files/anh-dep-3d-yodyvn.jpg?v=1683534873601" alt="Ảnh sách">
+            </div>
+            <div class="product-details">
+                <h1 th:text="${book.getProductName()}"></h1>
+<!--                <p class="product-author" th:text="${book.getProduct_name}"></p>-->
+<!--                <p class="product-description" th:text="${book.getProduct_name}"></p>-->
+<!--                <p class="product-price" th:text="'Giá: ' + ${book.getProduct_name}"></p>-->
+                <button class="add-to-cart-button">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2023 Your Bookstore</p>
+</footer>
+</div>
+</body>
+</html>
