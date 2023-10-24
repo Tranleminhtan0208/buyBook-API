@@ -7,8 +7,6 @@ import java.util.List;
 @Service
 public interface bookService {
     public List<bookEntity> getProductName();
-    //	public Users getUserIdById (int Id);
     public List<bookEntity> findAll();
-
     public boolean save( bookEntity be);
 }

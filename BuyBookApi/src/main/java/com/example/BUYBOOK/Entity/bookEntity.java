@@ -3,9 +3,6 @@ package com.example.BUYBOOK.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.math.BigInteger;
-import java.sql.Date;
-
 @Entity
 @Data
 @Table(name="product")

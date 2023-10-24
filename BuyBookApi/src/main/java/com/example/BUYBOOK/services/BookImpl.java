@@ -3,7 +3,6 @@ package com.example.BUYBOOK.services;
 import com.example.BUYBOOK.Entity.bookEntity;
 import com.example.BUYBOOK.respositories.BookRepositories;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

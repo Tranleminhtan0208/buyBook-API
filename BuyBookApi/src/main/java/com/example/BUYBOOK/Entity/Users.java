@@ -1,9 +1,6 @@
 package com.example.BUYBOOK.Entity;
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.math.BigInteger;
 import java.sql.Date;
